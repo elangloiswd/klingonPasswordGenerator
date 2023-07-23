@@ -11,6 +11,7 @@ generate_btn.addEventListener("click", GeneratePassword);
 const copy_btn = document.querySelector("#copy");
 copy_btn.addEventListener("click", CopyPassword);
 
+const speech = document.getElementById("speech");
 const klingonWords = [
   "nuqneh",
   "majaa",
@@ -131,6 +132,11 @@ function GeneratePassword() {
     isMixedCase = true;
   }
 
+  if (!hasNumber && !hasSymbol && !isUppercase && !isLowercase) {
+    speech.textContent = "Check a box!";
+    return;
+  }
+
   function getRandomElement(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
@@ -188,6 +194,10 @@ function GeneratePassword() {
     password = password.toLowerCase();
   }
 
+  speech.textContent = "Glorious Password!";
+  if (totalLength < 16) {
+    speech.textContent = "So WEAK!";
+  }
   password_el.value = password;
 
   setTimeout(() => {
@@ -217,6 +227,6 @@ function shuffleStringCase(str) {
 async function CopyPassword() {
   if (navigator.clipboard) {
     await navigator.clipboard.writeText(password_el.value);
-    alert("Password copied to clipboard");
+    speech.textContent = "Password has been copied to your clipboard.";
   }
 }

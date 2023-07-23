@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #4d7475;
-  color: #252725;
+  background: #121212;
+  color: #f0f0f0;
 }
 
 main {
@@ -23,32 +23,38 @@ main {
 main img {
   max-width: 20%;
 }
-
+h1 {
+  color: #df1e1b;
+}
 .container {
   width: 100%;
   max-width: 25rem;
   padding: 2rem 3rem;
-  background-color: whitesmoke;
+  background-color: #282828;
   border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .speechBubble {
-  background: #efefef;
+  background: #282828;
   border-radius: 0.3rem;
   font-size: 1.3rem;
   margin: 0 auto 0.5rem;
   max-width: 100%;
   padding: 0.75rem;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: 0.3s ease-out;
 }
 .speechBubble::after {
   border-left: 20px solid transparent;
-  border-top: 20px solid #efefef;
+  border-top: 20px solid #282828;
   bottom: -20px;
   content: "";
   position: absolute;
   left: 20px;
   bottom: -11px;
+  transition: 0.3s ease-out;
 }
 
 h1 {
@@ -67,6 +73,7 @@ button {
 
 input[type="checkbox"] {
   cursor: pointer;
+  accent-color: #514543;
 }
 
 .wrap {
@@ -88,7 +95,7 @@ input[type="checkbox"] {
   left: 0;
   right: 0;
   border-radius: 3px;
-  background: linear-gradient(to right, #ad25fc 25%, #518cd4 75%);
+  background-color: #8b8b8b;
 }
 
 .material-symbols-outlined {
@@ -97,23 +104,24 @@ input[type="checkbox"] {
 .wrap input {
   display: flex;
   width: 90%;
-  color: #282847;
   font-size: 1.3rem;
 }
 
-.wrap input::placeholder {
-  color: #888;
-  font-style: italic;
-}
 .wrap span {
-  background: linear-gradient(to right, #ad25fc 25%, #518cd4 75%);
+  background-color: #8b8b8b;
   cursor: pointer;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-right: -5%;
 }
 
 label input[type="checkbox"] {
-  margin-right: 5%;
+  accent-color: #393636;
+}
+
+label input[type="text"],
+label input[type="number"] {
+  color: #8b8b8b;
 }
 
 label {
@@ -139,18 +147,31 @@ label input[type="number"] {
 button[type="submit"] {
   display: flex;
   margin: auto;
+  margin-top: 12%;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: #f0e5e5;
   border-radius: 0.25rem;
   font-weight: bold;
   text-transform: uppercase;
   background-size: 200%;
   background-position: 25%;
   transition: 0.3s ease-out;
-  background: linear-gradient(to right, #ad25fc 25%, #518cd4 50%);
+  background: rgb(65, 65, 65);
+  background: linear-gradient(
+    24deg,
+    rgba(65, 65, 65, 1) 0%,
+    rgb(59, 58, 58) 35%,
+    rgba(64, 60, 60, 0.8939950980392157) 100%
+  );
 }
 
 button[type="submit"]:hover {
-  background-position: 75%;
+  background: rgb(65, 65, 65);
+  background: linear-gradient(
+    189deg,
+    rgba(65, 65, 65, 1) 0%,
+    rgba(94, 94, 94, 1) 35%,
+    rgba(64, 60, 60, 0.8939950980392157) 100%
+  );
 }
