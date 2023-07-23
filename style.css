@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #4d7475;
+  color: #252725;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main img {
+  max-width: 20%;
+}
+
+.container {
+  width: 100%;
+  max-width: 25rem;
+  padding: 2rem 3rem;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+}
+
+.speechBubble {
+  background: #efefef;
+  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  margin: 0 auto 0.5rem;
+  max-width: 100%;
+  padding: 0.75rem;
+  position: relative;
+}
+.speechBubble::after {
+  border-left: 20px solid transparent;
+  border-top: 20px solid #efefef;
+  bottom: -20px;
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -11px;
+}
+
+h1 {
+  font-size: 150%;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+input:not([type="checkbox"]),
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.wrap {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.wrap:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  height: 3px;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+  background: linear-gradient(to right, #ad25fc 25%, #518cd4 75%);
+}
+
+.material-symbols-outlined {
+  margin-left: auto;
+}
+.wrap input {
+  display: flex;
+  width: 90%;
+  color: #282847;
+  font-size: 1.3rem;
+}
+
+.wrap input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+.wrap span {
+  background: linear-gradient(to right, #ad25fc 25%, #518cd4 75%);
+  cursor: pointer;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label input[type="checkbox"] {
+  margin-right: 5%;
+}
+
+label {
+  display: flex;
+  user-select: none;
+  margin-bottom: 1rem;
+}
+
+label span {
+  display: block;
+  flex: 1 1 0%;
+  white-space: nowrap;
+}
+
+label input[type="number"] {
+  width: 2.5rem;
+  font-size: large;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin-left: 30px;
+  }
+}
+button[type="submit"] {
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-size: 200%;
+  background-position: 25%;
+  transition: 0.3s ease-out;
+  background: linear-gradient(to right, #ad25fc 25%, #518cd4 50%);
+}
+
+button[type="submit"]:hover {
+  background-position: 75%;
+}
