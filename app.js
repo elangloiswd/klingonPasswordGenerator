@@ -133,7 +133,12 @@ function GeneratePassword() {
   }
 
   if (!hasNumber && !hasSymbol && !isUppercase && !isLowercase) {
-    speech.textContent = "Check a box!";
+    speech.textContent = "Click a Checkbox!";
+    return;
+  }
+
+  if (!isUppercase && !isLowercase) {
+    speech.textContent = "No letter? No PASSWORD!";
     return;
   }
 
@@ -183,6 +188,8 @@ function GeneratePassword() {
 
     if (component.length <= remainingLength) {
       password += component;
+    } else {
+      password = "";
     }
   }
 
@@ -194,9 +201,10 @@ function GeneratePassword() {
     password = password.toLowerCase();
   }
 
-  speech.textContent = "Glorious Password!";
   if (totalLength < 16) {
     speech.textContent = "So WEAK!";
+  } else {
+    speech.textContent = "Glorious Password!";
   }
   password_el.value = password;
 
